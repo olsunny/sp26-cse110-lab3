@@ -1,2 +1,2 @@
 # Lab 2 - Starter
-[HTML file](index.html)
+[HTML file](https://github.com/olsunny/Lab2_Starter/)
