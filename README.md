@@ -1,2 +1,2 @@
-# Lab 2 - Starter
-[HTML file](https://olsunny.github.io/sp26-cse110-lab3)
+# Lab 3
+[HTML file stylized](https://olsunny.github.io/sp26-cse110-lab3)
