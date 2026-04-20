@@ -1,0 +1,513 @@
+/* ===================================================
+   BAKERY MEETING MINUTES STYLESHEET
+   Author: Bakery Team
+   Description: Complete styling for Olivia's Bakery meeting minutes
+   Includes: colors, units, box model, positioning, flexbox, grid, media queries
+   =================================================== */
+  
+   /* -------------------------------
+      2. UNIVERSAL SELECTOR (*)
+      ------------------------------- */
+   * {
+       margin: 0;
+       padding: 0;
+       box-sizing: border-box;
+   }
+   
+   /* -------------------------------
+      3. CSS VARIABLE WITH FALLBACK
+      ------------------------------- */
+   :root {
+       --primary-brand-color: #8B5E3C;  /* Hex - warm brown */
+       --secondary-color: rgb(245, 222, 179);  /* RGB - wheat */
+       --accent-color: hsl(35, 85%, 65%);  /* HSL - golden */
+       --highlight: color(display-p3 0.9 0.5 0.2);  /* Wide-gamut color */
+       --bg-warm: #FFF8E7;
+       --text-dark: #2C1810;
+   }
+   /* -------------------------------
+      4. ELEMENT SELECTOR & BACKGROUND-COLOR
+      ------------------------------- */
+   body {
+       background-color: var(--bg-warm, #FFF8E7);  /* CSS variable with fallback */
+       color: var(--text-dark, #2C1810);
+       /* Absolute units */
+       line-height: 1.6;
+       font-size: 16px;
+       max-width: 1200px;
+       /* Relative units */
+       margin: 2rem auto;
+       padding: 1.5rem;
+       position: relative;
+   }
+   
+   /* -------------------------------
+      5. HEADER STYLES (Element Selector)
+      ------------------------------- */
+   header {
+       background-color: #6B3A2A;  /* Hex */
+       color: #F5E6D3;
+       /* Longhand padding */
+       padding-top: 2rem;
+       padding-right: 2rem;
+       padding-bottom: 2rem;
+       padding-left: 2rem;
+       /* Longhand margin */
+       margin-top: 0;
+       margin-right: 0;
+       margin-bottom: 2rem;
+       margin-left: 0;
+       /* Border - longhand notation */
+       border-top-width: 4px;
+       border-right-width: 4px;
+       border-bottom-width: 4px;
+       border-left-width: 4px;
+       border-top-style: solid;
+       border-right-style: solid;
+       border-bottom-style: solid;
+       border-left-style: solid;
+       border-top-color: #D4A373;
+       border-right-color: #D4A373;
+       border-bottom-color: #D4A373;
+       border-left-color: #D4A373;
+       border-radius: 15px 15px 0 0;
+       text-align: center;
+       position: relative;
+   }
+   
+   /* Shorthand border for other elements */
+   nav {
+       background-color: hsl(30, 40%, 90%);
+       /* Shorthand margin */
+       margin: 20px 0 30px 0;
+       /* Shorthand padding */
+       padding: 12px 20px;
+       /* Shorthand border */
+       border: 2px solid var(--primary-brand-color, #8B5E3C);
+       border-radius: 30px;
+       text-align: center;
+   }
+   
+   /* -------------------------------
+      6. CLASS SELECTOR (.class)
+      ------------------------------- */
+   .section-container {
+       background-color: rgba(255, 248, 231, 0.95);
+       /* Relative units */
+       padding: 2.5rem;
+       margin-bottom: 2rem;
+       /* Absolute units */
+       border-radius: 12px;
+       min-width: 280px;
+       box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+   }
+   
+   /* -------------------------------
+      7. ID SELECTOR (#id)
+      ------------------------------- */
+   #agenda {
+       background: linear-gradient(135deg, #FFF3E0, #FFE4C4);
+       padding: 1.5rem;
+       border-left: 8px solid #D2691E;
+       /* Relative unit - vw */
+       width: 90%;
+       margin: 0 auto;
+   }
+   
+   /* -------------------------------
+      8. ATTRIBUTE SELECTOR ([attribute=value])
+      ------------------------------- */
+   input[type="text"] {
+       width: 100%;
+       padding: 10px;
+       margin: 8px 0;
+       border: 1px solid #ccc;
+       border-radius: 6px;
+       font-family: inherit;
+       transition: all 0.3s ease;
+   }
+   
+   input[type="text"]:focus {
+       border-color: #D2691E;
+       outline: none;
+       box-shadow: 0 0 5px rgba(210, 105, 30, 0.5);
+   }
+   
+   /* -------------------------------
+      9. PSEUDO-CLASS SELECTOR (:hover, :active)
+      ------------------------------- */
+   button:hover {
+       background-color: #D2691E;
+       color: white;
+       transform: scale(1.02);
+       cursor: pointer;
+   }
+   
+   button:active {
+       transform: scale(0.98);
+       background-color: #8B4513;
+   }
+   
+   a:hover {
+       color: #D2691E;
+       text-decoration: underline wavy;
+   }
+   
+   /* -------------------------------
+      10. SELECTOR LIST (multiple elements)
+      ------------------------------- */
+   h1, h2, h3 {
+       font-weight: 600;
+       color: #5C3A21;
+       margin-top: 1rem;
+       margin-bottom: 0.5rem;
+   }
+   
+   /* -------------------------------
+      11. COMBINATORS - DESCENDANT (element element)
+      ------------------------------- */
+   section p {
+       margin-bottom: 1rem;
+       line-height: 1.8;
+   }
+   
+   /* -------------------------------
+      12. COMBINATOR - CHILD (element > element)
+      ------------------------------- */
+   section > h2 {
+       border-bottom: 3px solid var(--accent-color, #F4A261);
+       display: inline-block;
+       padding-bottom: 0.25rem;
+       margin-bottom: 1rem;
+   }
+   
+   /* -------------------------------
+      13. COMBINATOR - GENERAL SIBLING (element ~ element)
+      ------------------------------- */
+   h3 ~ ul {
+       background-color: #FFF9F0;
+       padding: 1rem;
+       border-radius: 8px;
+   }
+   
+   /* -------------------------------
+      14. COMBINATOR - ADJACENT SIBLING (element + element)
+      ------------------------------- */
+   h2 + p {
+       font-size: 1.1rem;
+       font-weight: 500;
+       color: #6B3A2A;
+   }
+   
+   /* -------------------------------
+      15. COMBINING TWO SELECTORS (element.class)
+      ------------------------------- */
+   div.highlight-box {
+       background-color: #FDF5E6;
+       padding: 1rem;
+       border: 2px dashed #D2691E;
+       border-radius: 10px;
+       margin: 1rem 0;
+   }
+   
+   /* -------------------------------
+      16. :HAS() PSEUDO-CLASS
+      ------------------------------- */
+   section:has(> details) {
+       background-color: #FFFBF0;
+       padding: 1.5rem;
+       border-radius: 12px;
+       margin: 1.5rem 0;
+   }
+   
+   /* -------------------------------
+      17. NESTED SELECTORS
+      ------------------------------- */
+   footer {
+       background-color: #2C1810;
+       color: #F5E6D3;
+       padding: 2rem;
+       margin-top: 3rem;
+       border-radius: 0 0 15px 15px;
+       text-align: center;
+       
+       /* Nested selectors */
+       p {
+           margin: 0.5rem 0;
+       }
+       
+       a {
+           color: #F4A261;
+           text-decoration: none;
+           
+           &:hover {
+               text-decoration: underline;
+               color: #FFD700;
+           }
+       }
+   }
+   
+   /* -------------------------------
+      18. DISPLAY PROPERTIES (none, block, inline-block, inline)
+      ------------------------------- */
+   .hidden-mobile {
+       display: none;  /* Hidden by default on mobile */
+   }
+   
+   .inline-example {
+       display: inline;
+       background-color: #FFE4B5;
+       padding: 0 5px;
+   }
+   
+   .inline-block-example {
+       display: inline-block;
+       width: 150px;
+       background-color: #F0E6D2;
+       padding: 10px;
+       margin: 5px;
+       text-align: center;
+       border-radius: 8px;
+   }
+   
+   .block-example {
+       display: block;
+       width: 100%;
+       background-color: #FFF3E0;
+       padding: 10px;
+       margin: 10px 0;
+   }
+   
+   /* -------------------------------
+      19. SIZING (height, width, max-width, min-width)
+      ------------------------------- */
+   img {
+       /* Relative unit - vh */
+       height: 30vh;
+       width: auto;
+       max-width: 100%;
+       min-width: 150px;
+       object-fit: cover;
+       border-radius: 12px;
+       display: block;
+       margin: 1rem auto;
+   }
+   
+   /* -------------------------------
+      20. POSITIONING (static, relative, fixed, absolute, sticky)
+      ------------------------------- */
+   /* static - default, no declaration needed */
+   
+   /* relative */
+   .relative-example {
+       position: relative;
+       top: 10px;
+       left: 20px;
+   }
+   
+   /* fixed - back to top button style */
+   .fixed-nav {
+       position: fixed;
+       bottom: 20px;
+       right: 20px;
+       background-color: #D2691E;
+       color: white;
+       padding: 10px 15px;
+       border-radius: 50px;
+       text-decoration: none;
+       z-index: 100;
+   }
+   
+   /* absolute */
+   section {
+       position: relative;  /* Parent context */
+   }
+   
+   section .badge {
+       position: absolute;
+       top: -10px;
+       right: -10px;
+       background-color: #FF6B6B;
+       color: white;
+       border-radius: 50%;
+       width: 30px;
+       height: 30px;
+       display: flex;
+       align-items: center;
+       justify-content: center;
+       font-size: 12px;
+   }
+   
+   /* sticky */
+   .sticky-header {
+       position: sticky;
+       top: 0;
+       background-color: rgba(255, 248, 231, 0.95);
+       backdrop-filter: blur(5px);
+       z-index: 10;
+       padding: 1rem;
+       border-bottom: 2px solid #D4A373;
+   }
+   
+   /* -------------------------------
+      21. FLEXBOX & GRID
+      ------------------------------- */
+   /* Flexbox example */
+   nav {
+       display: flex;
+       justify-content: center;
+       gap: 2rem;
+       flex-wrap: wrap;
+   }
+   
+   nav a {
+       text-decoration: none;
+       color: var(--primary-brand-color, #8B5E3C);
+       font-weight: 600;
+       padding: 0.5rem 1rem;
+       transition: all 0.3s;
+   }
+   
+   /* Grid example */
+   .grid-container {
+       display: grid;
+       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+       gap: 1.5rem;
+       margin: 2rem 0;
+   }
+   
+   .grid-item {
+       background-color: white;
+       padding: 1rem;
+       border-radius: 12px;
+       box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+   }
+   
+   /* Flexbox for form layout */
+   form fieldset {
+       display: flex;
+       flex-direction: column;
+       gap: 0.75rem;
+   }
+   
+   /* -------------------------------
+      22. MEDIA QUERY (screen width)
+      ------------------------------- */
+   /* Mobile styles (default) */
+   @media screen and (max-width: 768px) {
+       body {
+           /* Absolute units */
+           font-size: 14px;
+           padding: 0.5rem;
+           margin: 0.5rem;
+       }
+       
+       h1 {
+           font-size: 1.75rem;
+       }
+       
+       .grid-container {
+           grid-template-columns: 1fr;
+       }
+       
+       nav {
+           flex-direction: column;
+           align-items: center;
+           gap: 0.5rem;
+       }
+       
+       /* Show/hide based on screen size */
+       .hidden-mobile {
+           display: inline-block;
+       }
+       
+       .desktop-only {
+           display: none;
+       }
+   }
+   
+   /* Tablet styles */
+   @media screen and (min-width: 769px) and (max-width: 1024px) {
+       .grid-container {
+           grid-template-columns: repeat(2, 1fr);
+       }
+       
+       body {
+           padding: 1rem;
+       }
+   }
+   
+   /* Desktop styles */
+   @media screen and (min-width: 1025px) {
+       body {
+           /* Relative unit - vw */
+           font-size: 1.1vw;
+           padding: 2rem;
+       }
+       
+       .desktop-only {
+           display: block;
+       }
+   }
+   
+   /* -------------------------------
+      23. ADDITIONAL TEXT STYLES
+      ------------------------------- */
+   .text-decorations {
+       text-decoration: underline overline wavy #D2691E;
+   }
+   
+   .text-align-example {
+       text-align: justify;
+   }
+   
+   /* -------------------------------
+      24. FORM ELEMENTS STYLING
+      ------------------------------- */
+   button, input[type="submit"] {
+       background-color: #A0522D;
+       color: white;
+       border: none;
+       padding: 10px 20px;
+       border-radius: 25px;
+       font-family: inherit;
+       font-weight: 600;
+       transition: all 0.3s ease;
+       cursor: pointer;
+   }
+   
+   /* -------------------------------
+      25. UTILITY CLASSES
+      ------------------------------- */
+   .text-center { text-align: center; }
+   .mt-1 { margin-top: 1rem; }
+   .mb-1 { margin-bottom: 1rem; }
+   .p-2 { padding: 2rem; }
+   .w-100 { width: 100%; }
+   
+   /* -------------------------------
+      26. ANIMATIONS & TRANSITIONS
+      ------------------------------- */
+   * {
+       transition: all 0.2s ease-in-out;
+   }
+   
+   /* -------------------------------
+      27. PRINT STYLES
+      ------------------------------- */
+   @media print {
+       body {
+           background-color: white;
+           color: black;
+           font-size: 12pt;
+       }
+       
+       nav, .fixed-nav, button, .badge {
+           display: none;
+       }
+       
+       a {
+           text-decoration: none;
+           color: black;
+       }
+   }
