@@ -1,8 +1,5 @@
 /* ===================================================
    BAKERY MEETING MINUTES STYLESHEET
-   Author: Bakery Team
-   Description: Complete styling for Olivia's Bakery meeting minutes
-   Includes: colors, units, box model, positioning, flexbox, grid, media queries
    =================================================== */
   
    /* -------------------------------
@@ -137,7 +134,7 @@
       9. PSEUDO-CLASS SELECTOR (:hover, :active)
       ------------------------------- */
    button:hover {
-       background-color: #D2691E;
+       background-color: color-mix(in srgb, red, yellow);
        color: white;
        transform: scale(1.02);
        cursor: pointer;
